@@ -90,27 +90,48 @@ const onConnect = useStore((state) => state.onConnect);
     }, []);
 
     return (
-        <>
-        <div ref={reactFlowWrapper} style={{ width: '100vw', height: '70vh'}}>
-            <ReactFlow
-                nodes={nodes}
-                edges={edges}
-                onNodesChange={onNodesChange}
-                onEdgesChange={onEdgesChange}
-                onConnect={onConnect}
-                onDrop={onDrop}
-                onDragOver={onDragOver}
-                onInit={setReactFlowInstance}
-                nodeTypes={nodeTypes}
-                proOptions={proOptions}
-                snapGrid={[gridSize, gridSize]}
-                connectionLineType='smoothstep'
-            >
-                <Background color="#aaa" gap={gridSize} />
-                <Controls />
-                <MiniMap />
-            </ReactFlow>
-        </div>
-        </>
-    )
+  <>
+    <div
+      ref={reactFlowWrapper}
+      style={{ width: '100vw', height: '70vh' }}
+    >
+      <ReactFlow
+        nodes={nodes}
+        edges={edges}
+        onNodesChange={onNodesChange}
+        onEdgesChange={onEdgesChange}
+        onConnect={onConnect}
+        onDrop={onDrop}
+        onDragOver={onDragOver}
+        onInit={setReactFlowInstance}
+        nodeTypes={nodeTypes}
+        proOptions={proOptions}
+        snapGrid={[gridSize, gridSize]}
+        connectionLineType="smoothstep"
+      >
+        <Background color="#aaa" gap={gridSize} />
+        <Controls />
+        <MiniMap />
+      </ReactFlow>
+    </div>
+
+    {/* Submit Button */}
+    <div style={{ textAlign: 'center', marginTop: 16 }}>
+      <button
+        onClick={submitPipeline}
+        style={{
+          padding: '8px 16px',
+          borderRadius: 6,
+          border: '1px solid #ccc',
+          cursor: 'pointer',
+          background: '#2563eb',
+          color: '#fff',
+          fontWeight: 500,
+        }}
+      >
+        Submit
+      </button>
+    </div>
+  </>
+);
 }
