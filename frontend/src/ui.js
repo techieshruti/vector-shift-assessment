@@ -10,6 +10,7 @@ import { InputNode } from './nodes/inputNode';
 import { LLMNode } from './nodes/llmNode';
 import { OutputNode } from './nodes/outputNode';
 import { TextNode } from './nodes/textNode';
+import { submitPipeline } from './submit';
 
 import 'reactflow/dist/style.css';
 
