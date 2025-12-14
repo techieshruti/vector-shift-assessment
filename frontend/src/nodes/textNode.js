@@ -33,9 +33,20 @@ const inputs = useMemo(() => extractVariables(text), [text]);
       outputs={['output']}
     >
       <textarea
+        ref={textareaRef}
         value={text}
         onChange={(e) => setText(e.target.value)}
-        style={{ width: '100%' }}
+        placeholder="Type text with {{variables}}"
+        style={{
+          width: '100%',
+          resize: 'none',
+          overflow: 'hidden',
+          fontSize: 13,
+          lineHeight: '18px',
+          padding: 6,
+          borderRadius: 6,
+          border: '1px solid #d1d5db',
+        }}
       />
     </BaseNode>
   );
