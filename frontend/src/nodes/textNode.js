@@ -15,6 +15,14 @@ const extractVariables = (text) => {
 export const TextNode = ({ id, data }) => {
   const [text, setText] = useState(data?.text || '{{input}}');
 
+  // Auto-resize textarea
+  const textareaRef = useRef(null);
+  useEffect(() => {
+    if (!textareaRef.current) return;
+    textareaRef.current.style.height = 'auto';
+    textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
+  }, [text]);
+
   return (
     <BaseNode
       id={id}
