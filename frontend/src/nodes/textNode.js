@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useRef, useState, useEffect, useMemo } from 'react';
 import { BaseNode } from './BaseNode';
 
 const extractVariables = (text) => {
