@@ -65,7 +65,7 @@ export const BaseNode = ({
             top: `${30 + index * 20}px`,
             background: '#16a34a',
             width: 10,
-            height: 10,
+            height: 1,
           }}
         />
       ))}
