@@ -1,6 +1,17 @@
 import { useState } from 'react';
 import { BaseNode } from './BaseNode';
 
+const extractVariables = (text) => {
+  const regex = /\{\{\s*([a-zA-Z_$][\w$]*)\s*\}\}/g;
+  const vars = new Set();
+  let match;
+  while ((match = regex.exec(text)) !== null) {
+    vars.add(match[1]);
+  }
+  return Array.from(vars);
+};
+
+
 export const TextNode = ({ id, data }) => {
   const [text, setText] = useState(data?.text || '{{input}}');
 
