@@ -23,6 +23,8 @@ export const TextNode = ({ id, data }) => {
     textareaRef.current.style.height = `${textareaRef.current.scrollHeight}px`;
   }, [text]);
 
+const inputs = useMemo(() => extractVariables(text), [text]);
+
   return (
     <BaseNode
       id={id}
